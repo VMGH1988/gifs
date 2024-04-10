@@ -1,10 +1,39 @@
-import { Component } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'shared-lazy-image',
   templateUrl: './lazy-image.component.html',
 
 })
-export class LazyImageComponent {
+export class LazyImageComponent implements OnInit{
 
+
+  @Input()
+  public url!:string;
+
+  @Input()
+  public alt:string =''; //al ponerlo asi ya no es obligatorio que se pase el alt
+
+  hasLoaded: boolean = false;
+
+
+
+
+  ngOnInit(): void {
+    if(!this.url) throw new Error('URL property is required');
+  }
+
+  /*Para ver el icono de carga bien
+  onLoad(){
+    setTimeout(()=>{
+      this.hasLoaded= true;
+    },1000);
+  }
+  */
+
+  onLoad(){
+
+      this.hasLoaded= true;
+
+  }
 }

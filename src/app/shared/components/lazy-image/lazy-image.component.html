@@ -1,1 +1,26 @@
-<p>lazy-image works!</p>
+
+<div class="d-flex justify-content-center">
+
+  <img
+  [src]="url"
+  [alt]="alt"
+  class="card-img-top animate__animated animate__fadeIn"
+  (load)="onLoad()"
+  [ngStyle]="{display: hasLoaded ? '':'none'}"
+  />
+  <!--Poniendo corchetes va poniendo la que toca del array,
+     las imagenes tienen (load) para saber si ha cargado o no,
+    con el ngStyle podemos hacer cambiar el display segun este cargada la imagen o no-->
+
+
+  <img
+  *ngIf="!hasLoaded"
+  src="assets/loader.svg"
+  height="35"
+  width="35"
+  class="mt-3"
+  >
+
+</div>
+
+

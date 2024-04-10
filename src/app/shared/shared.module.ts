@@ -5,13 +5,15 @@ import { LazyImageComponent } from './components/lazy-image/lazy-image.component
 
 
 
+
 @NgModule({
   declarations: [
     SideBarsComponent,
     LazyImageComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+
   ],
   exports: [
     SideBarsComponent,
